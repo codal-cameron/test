@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+//    @Environment(\.whichPage) var whichPage
+    
+//    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            VStack {
+                HomepageHeaderView()
+                ScrollView(.vertical, showsIndicators: false) {
+                    StoriesView()
+                    Divider().padding([.top], 0)
+                    PostsView()
+                }
+                Spacer()
+                FooterView()
+            }
+            
         }
-        .padding()
     }
 }
 
